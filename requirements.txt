@@ -1,0 +1,7 @@
+torch==1.10.0
+numpy==1.21.4
+Pillow==8.4.0
+flask==3.0.3
+werkzeug==3.0.1
+matplotlib==3.4.3
+opencv-python-headless==4.5.4.60
