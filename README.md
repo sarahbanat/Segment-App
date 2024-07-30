@@ -12,9 +12,14 @@ The Depth Segmentation App is a web-based application that generates depth maps 
 - **Semantic Segmentation**: Perform semantic segmentation to identify specific objects in images using the Segformer model.
 - **Overlay Results**: Overlay segmentation results on the original images for visualization.
 
-## Requirements
 
+## Requirements
 - Docker
+- Python 3.9+
+- Flask
+- Torch 2.4.0
+- Transformers
+- OpenCV
 
 ## Setup
 
