@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Depth Segmentation App is a web-based application that generates depth maps and performs semantic segmentation on images. This project leverages the Depth-Anything-V2 model for depth map generation and the Segformer model for semantic segmentation. The application is built using Flask for the web server and integrates with PyTorch and Hugging Face's transformers.
+The Depth Segmentation App is a service that generates depth maps and performs semantic segmentation on images. This project leverages the Depth-Anything-V2 model for depth map generation and the Segformer model for semantic segmentation. The application is built using Flask for the web server and integrates with PyTorch and Hugging Face's transformers.
 
 ## Features
 
