@@ -71,7 +71,7 @@ The segmentation results will be saved in the directory you mounted to /tmp in t
 ```
 depth-segmentation-app/
 │
-├── Depth-Anything-V2/         # Directory containing the Depth-Anything-V2 model and related files
+├── Depth-Anything-V2/         # Dir that has the Depth-Anything-V2 model adn related files
 │   ├── checkpoints/
 │   ├── assets/
 │   ├── metric_depth/
@@ -82,7 +82,7 @@ depth-segmentation-app/
 │   ├── run.py
 │   └── run_video.py
 │
-├── data/                      # Directory to store input images and output results
+├── data/                      # Dir to store input images and output results
 │   ├── depthmaps/
 │   ├── depthmaps_gs/
 │   ├── imgs/
