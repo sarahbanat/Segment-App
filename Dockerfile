@@ -1,18 +1,18 @@
-# Use a base Ubuntu image
+# base Ubuntu Image
 FROM ubuntu:20.04
 
-# Set a special Python settings for being able to see logs in the terminal
+# Python settings to see logs in terminal
 ENV PYTHONUNBUFFERED=TRUE
 
-# Set bash as current shell
+# bash as current shell
 RUN chsh -s /bin/bash
 SHELL ["/bin/bash", "-c"]
 
-# Set timezone
+# seting a time zone that prevents docker from hanging at image build
 ENV TZ=America/New_York
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-#dependencies
+# dependencies
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
     wget bzip2 ca-certificates libglib2.0-0 libxext6 libsm6 libxrender1 git \
@@ -48,13 +48,13 @@ SHELL ["/bin/bash", "--login", "-c"]
 ENV PATH /opt/conda/envs/segformer_env/bin:$PATH
 ENV CONDA_DEFAULT_ENV segformer_env
 
-# Set the environment variable to fix TLS issue
+# set the environment variable to fix TLS issue
 ENV LD_PRELOAD /usr/lib/aarch64-linux-gnu/libgomp.so.1
 
 # copy the source code
 COPY src/app.py entrypoint.sh ./
 
-# Make the entrypoint script executable
+# make the entrypoint script executable
 RUN chmod +x entrypoint.sh
 
 
