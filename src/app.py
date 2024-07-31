@@ -26,7 +26,7 @@ def generate_depth_map(image_path, output_dir):
         print(f"Generating depth map for image: {abs_image_path}")
         print(f"Output directory: {abs_output_dir}")
 
-        # Run depth anything v2 model to generate depth map
+        #Generate Depth map by running cmd for DA_V2
         cmd = [
             "python", os.path.join(depth_anything_v2_dir, "run.py"),
             "--encoder", "vitl",
@@ -66,7 +66,7 @@ def process_and_predict(image_path, model, feature_extractor, device):
 
     predicted_class = upsampled_logits.argmax(dim=1).squeeze().cpu().numpy()
 
-    # Focus on utility poles (class index 5 for Cityscapes)
+    # Focus on utility poles -> (class index 5 for Cityscapes)
     utility_pole_class_index = 5
     binary_mask = np.where(predicted_class == utility_pole_class_index, 1, 0)
 
@@ -102,7 +102,6 @@ def segment_image():
     file.save(input_path)
 
     try:
-        # Generate depth map
         output_dir = '/tmp'
         depth_map_path = generate_depth_map(input_path, output_dir)
         if not depth_map_path or not os.path.exists(depth_map_path):
@@ -117,7 +116,7 @@ def segment_image():
         feature_extractor = SegformerImageProcessor.from_pretrained(model_name)
         model = SegformerForSemanticSegmentation.from_pretrained(model_name).to(device)
         
-        # Process and predict on depth map
+        # process depth map and perform semantic segmentation
         binary_mask = process_and_predict(depth_map_path, model, feature_extractor, device)
         
         output_seg_path = "/tmp/output_seg.png"
