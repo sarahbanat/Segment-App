@@ -32,6 +32,12 @@ git clone https://github.com/sarahbanat/Segment-App.git
 cd Segment-App
 ```
 
+Clone Depth Anything repository:
+```bash
+git clone https://github.com/DepthAnything/Depth-Anything-V2
+cd Depth-Anything-V2
+pip install -r requirements.txt
+```
 
 ### Build the Docker Image
 
