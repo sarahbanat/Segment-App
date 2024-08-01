@@ -29,7 +29,7 @@ First, clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/sarahbanat/Segment-App.git
-cd depth-segmentation-app
+cd Segment-App
 ```
 
 
