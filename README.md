@@ -28,7 +28,7 @@ The Depth Segmentation App is a service that generates depth maps and performs s
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/USERNAME/depth-segmentation-app.git
+git clone https://github.com/sarahbanat/depth-segmentation-app.git
 cd depth-segmentation-app
 ```
 
