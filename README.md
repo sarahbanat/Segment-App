@@ -38,6 +38,11 @@ git clone https://github.com/DepthAnything/Depth-Anything-V2
 cd Depth-Anything-V2
 pip install -r requirements.txt
 ```
+Create a checkpoints folder to save the pretrained model
+```bash
+mkdir checkpoints
+```
+Download the pretrained Depth-Anything-V2-Large	model (available on https://github.com/DepthAnything/Depth-Anything-V2) and place it in the checkpoints directory.
 
 ### Build the Docker Image
 
